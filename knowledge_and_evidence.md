@@ -84,43 +84,56 @@ python3 main.py
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
-   | Control Flow | File       | First line  | Line range  |
-   | ------------ | ---------- | ----------- | ----------- |
-   |  sequence    |  _         | _           | _           |
-   |  selection   | _          | _           | _           |
-   |  iteration   | _          | _           | _           |
+   | Control Flow   | File       | First line        | Line range  |
+   | ------------   | ---------- | -----------       | ----------- |
+   | sequence	      | smiley.py	 |self.pixels = [	   | 14–30       |
+   | selection	     | sad.py	    | if wide_open:	    | 17–21       |
+   | iteration      |	happy.py	  |for pixel in mouth:|	15–17       |
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
    | Type                    | Used? | Example |
    | ----------------------- | ----- | --------|
-   | int                     | _     | _          |
-   | float                   | _     | _          |
-   | str                     | _     | _          |
-   | bool                    | _     | _          |
+   |int	                     |Yes	   | 255 (from WHITE = (255, 255, 255))|
+   |float	                   |Yes    |	0.25 (from blink(self, delay=0.25) in happy.py) |
+   |str	                     |Yes    |	"Draws the mouth feature on a smiley" (docstring in sad.py) |
+   |bool	                    |Yes	   | wide_open=True (parameter in draw_eyes methods) |
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
 > Your answer here
->
+> (Within smiley.py) YELLOW = (255, 255, 0) is a class variable because it’s written at the top of the class, outside of the method content. Thus it acts like a shared constant — meaning every Smiley object can use it. The value also stays the same no matter how many smileys the user creates. Colours make sense to be categorised as class variables because they don’t change from one object to the next (similarly the could be termed constants).
+> By contrast, self.pixels can be categorised as an "instance variable" because it’s created inside the constructor (__init__). Noteworthy, that each smiley object has its own version (i.e., `self.pixels). 
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
    > Your answer here
-   >
+   >In Python, a constructor (__init__) will run automatically when a new objects created. Its general purpose is to set the object’s starting state up, so it’s ready to be used.
+   > In the Happy class, the constructor starts by calling the parent Smiley constructor to build the basic smiley, followed by customising it by drawing the mouth and eyes. This makes sure every Happy object starts by/looks like a happy face.
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
    > Your answer here
-   >
+   > The constructor executes super().__init__(), which runs the parent Smiley setup and creates the base pixel grids/SenseHat objects.
+   > Next, it calls self.draw_mouth() and self.draw_eyes(), which changes the specific pixels by forming a happy mouth and eyes. The outcome: every new Happy object starts with a working smiley appearance that will look cheerful.
 
 ### 2.3. Code style
 
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
 
 > Your answer here
->
+> The code style for the code follows the PEP 8 Python style guide, which is the standard convention for Python and what we use at Nmtafe e.g., lowercase_with_underscores for method names (draw_mouth, draw_eyes), consistent indentation, and docstrings used for functions.
+
+It’s not guaranteed to be the same coding style as the official SenseHat library, because that library could have its own conventions or priorities (i.e., focusing on hardware integration opposed to strict coding styles). 
+
+However, both are Python projects, so it’s likely they share some similar practices and coding styles may overlap.
+
+Reasons:
+
+The smiley code uses PEP 8 conventions (e.g., naming and indentation), which are common in Python projects.
+
+The SenseHat library is also written in Python, so it probably follows similar conventions, but it may differ in places to match hardware, tasks, and performance needs. Thus better to state the likelihood indefinitive opposed to absolute. 
 
 2. List three aspects of this convention you see applied in the code.
 
