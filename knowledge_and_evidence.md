@@ -138,13 +138,20 @@ The SenseHat library is also written in Python, so it probably follows similar c
 2. List three aspects of this convention you see applied in the code.
 
 > Your answer here
->
+> Method naming/coding style, posits users use lowercase_with_underscores (e.g. draw_mouth, draw_eyes).
+
+Indentation must be consistent (i.e., four spaces per level).
+
+Docstrings i.e., included under classes/methods as this explains their purpose.
 
 3. Give two examples of organizational documentation in the code.
 
 > Your answer here
->
+> Two examples of organizational documentation that are found in the code are:
 
+Module‑level imports and structure (like import time/from smiley, import Smiley at the top), which shows the programmer how the codes organised and what external resources it requires.
+
+Inline comments (e.g., ' #Renders a mouth by blanking the pixels'), which clarify the roles of specific code blocks
 ### 2.4. Identifying and understanding classes
 
 > Note: Ignore the `sense_hat.py` file when answering the questions below
@@ -155,18 +162,23 @@ The SenseHat library is also written in Python, so it probably follows similar c
 
 | Class Name | Super or Sub? | Direct parent(s) |
 | ---------- | ------------- | ---------------- |
-| NotReal    | Sub           | NotRealParent    |
-|   ...      |   ...         |      ...         |
+| Class Name | Super or Sub? | Direct parent(s) |
+| Smiley     | Super         | none (no real parent) |
+| Sad        | Sub           | Smiley  (real parent) |
+| Happy      | Sub           | Smiley (real parent), Blinkable (real parent) |
+| Blinkable  | Super         | none             |
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
 > Your answer here
->
+>Abstraction refers to the process of simplifying complex systems i.e., focusing only on the key features/hiding unnecessary detail. In this iPRIOT project, the Smiley class is a good example as it manages the underlying pixel grid/SenseHat setup, but users do not need to understand how each is controlled (i.e., LED). Instead, subclasses (such as Happy/Sad) provide clear methods e.g., draw_mouth() or draw_eyes() that represent facial expressions.
+> This makes the codes easier to read, decreases related complexity, and allows students/junior developers to work with high‑level concepts rather than low‑level technical tasks and projects.
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
 > Your answer here
->
+> The process of 'deriving from base classes' is called inheritance. Inheritance allows the reuse and functional extensions by new classes, without having to rewrite code. In this project, Sad and Happy inherit (i.e., from the base class Smiley), which sets up pixel grids and core drawing methods are provided. By inheriting, these subclasses only need to override/add features that make their expressions unique, this is evident by shape of their mouth and blinking behaviour. This reduces duplication, keeps the designs/workstation organised, and makes the program comparatively easier to maintain.
+If another emotions were needed, then new subclasses could be quickly created by reusing the same base-logic. Inheritance therefore supports several areas such as; flexibility, clarity, and efficient development in the project tasks.
 
 ### 2.5. Compare and contrast classes
 
