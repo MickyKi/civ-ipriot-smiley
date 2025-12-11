@@ -28,3 +28,12 @@ class Sad(Smiley):
             else:
                 eyes = self.YELLOW
             self.pixels[pixel] = eyes
+            
+class Sad(Smiley):
+    def __init__(self):
+        super().__init__()
+
+    def blink(self, delay=0.25):
+        self.sense.clear()     # eyes disappear
+        time.sleep(delay)      # short pause
+        self.draw_sad_face()   # redraw sad face
