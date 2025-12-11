@@ -246,8 +246,10 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
    - Create a new method called `blink` within the Sad class. Ensure you use the same method signature as in the Happy class:
 
    ```python
-   def blink(self, delay=0.25):
-       pass  # Replace 'pass' with your implementation
+    def blink(self, delay=0.25):
+        self.sense.clear()     # eyes disappear
+        time.sleep(delay)      # short pause
+        self.draw_sad_face()   # redraw sad face
    ```
 
 2. **Code Implementation:** Implement the code that allows the Sad smiley to blink. Use the implementation from the Happy Smiley as a reference. Ensure your new method functions similarly by controlling the blink duration through the `delay` argument.
