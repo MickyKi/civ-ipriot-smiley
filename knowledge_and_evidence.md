@@ -186,28 +186,33 @@ Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
    > Your answer here
-   >
+   > The Happy classes extend Smiley's by overriding methods resulting in an upward mouth curve drawn and the option to add blinking behaviour, while the Sad classes override the same base methods and result in a downward mouth curve drawn without blinking. There is multiple key differences difference such as the visual expression and how each subclass customises inherited behaviour to represent distinct emotions and behaviours.
+   
 2. What are the key similarities?
    > Your answer here
-   >
+   > Both classes inherit features from Smiley, rely on the same pixel grid setup, and are reconfigured via methods, to define facial features. They share the same structure and purpose i.e., representing emotion states through base design variations.
+   
 3. What difference stands out the most to you and why?
    > Your answer here
-   >
+   > The overriding mouth‑drawing logic stands out to me the most because it directly changes the emotions semantic representation surrounding for display, and makes the intent/behaviour of each class clear.
+   
 4. How does this difference affect the functionality of these classes
    > Your answer here
-   >
+   > It determines the emotional tone which is shown on the SenseHat i.e., happy produces out put that is cheerful, and engaging, while the Sad class produces output resembling a downturned, sombre face. Although it may appear simple, this affects how users will interpret the program’s feedback and demonstrates how inheritance supports expressive variation.
 
 ### 2.6. Where is the Sense(Hat) in the code?
 
 1. Which class(es) utilize the functionality of the SenseHat?
    > Your answer here
-   >
+   > The Smiley superclass utilizes the SenseHat by organising LED pixel grids and providing methods that draw facial features. The Subclasses (such as Happy and Sad) rely on this functionality indirectly through their inheritance.
+   
 2. Which of these classes directly interact with the SenseHat functionalities?
    > Your answer here
-   >
+   > The Smiley class is is the class that directly interacts with the SenseHat API. It contains the code that facilitates SenseHat methods to illuminate/show the pixels and display images. 
+   
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
    > Your answer here
-   >
+   > The hiding of the SenseHat in this project demonstrates encapsulation. By utilising encapsulation we restrict direct access to certain functions and expose it through specific-controlled methods. The Smiley class is the only class found in the code, that can directly interact with the SenseHat, and handle tasks like setting pixels and clearing the display image. Subclasses like Happy and Sad are not required to know the technical details of how the SenseHat is operating; instead, they override/extend the Smiley classes methods which defines their own facial expressions. Further to this, this design helps to isolate hardware interaction, prevent duplication of SenseHat code, and in turn the program is easier to maintain. If the SenseHat changes, only the Smiley class requires the transmission of updates. Noteworthy, the encapsulation process also improves clarity, reduces complexity, and ensures subclasses focuses on behaviour, opposed to low‑level operations.
 
 ### 2.7. Sad Smileys Can’t Blink (Or Can They?)
 
@@ -218,22 +223,24 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
 > Your answer here
->
+> No, the author does not expect every Smileys blinks. Blinking is limited to certain subclasses (like Happy), while the base Smiley class chooses to focus core features e.g., setting up the pixel grids and drawing expressions. This shows blinking is believed to be optional behaviour rather than a universal requirement.
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
 > Your answer here
->
+> No, the author does not expect blinking smileys to all blink in the same manner. Blinking behaviours defined at the subclass level, thus can be overrided/customised to change how blinking occurs. For example, one smiley might blink at a different rate (faster or slower) or with a different visual effect than another smiley. This design shows that blinkings treated as a flexible behaviour, and allows variation between subclasses rather than enforcing singular, uniformed implementations.
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
 > Your answer here
->
+> Polymorphism refers to a specific object‑oriented principle where different classes, define their own unique versions of the same method. For example, both Happy and Sad subclasses share inheritance from Smiley and implement their own blinking behaviour. Although the actual method is the same, each one customises how blinking occurs. This allows blink() to be called on by any Smiley object without needing to know its exact type i.e., the correct version still runs. Polymorphism enables flexibility, code reuse, and variable behaviour although there is a consistent interface.
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
 > Your answer here
->
+> Inheritance allows subclasses (Happy and Sad) to reuse Smiley's base structure while overriding the blink method. This is important for polymorphism i.e., letting the program call blink() on all Smiley objects and running the correct subclass version automatically, triggering different behaviours, without the program needing to know exact object type.
+
+
 1. **Implement Blink in Sad Class:**
 
    - Create a new method called `blink` within the Sad class. Ensure you use the same method signature as in the Happy class:
