@@ -1,16 +1,15 @@
+import time
 from smiley import Smiley
-
 
 class Sad(Smiley):
     def __init__(self):
         super().__init__()
-
         self.draw_mouth()
         self.draw_eyes()
 
     def draw_mouth(self):
         """
-        Draws the mouth feature on a smiley
+        Draws the mouth feature on a sad smiley
         """
         mouth = [49, 54, 42, 43, 44, 45]
         for pixel in mouth:
@@ -18,22 +17,26 @@ class Sad(Smiley):
 
     def draw_eyes(self, wide_open=True):
         """
-        Draws open or closed eyes on a smiley
+        Draws open or closed eyes on a sad smiley
         :param wide_open: Render eyes wide open or shut
         """
-        eyes = [10, 13, 18, 21]
-        for pixel in eyes:
-            if wide_open:
-                eyes = self.BLANK
-            else:
-                eyes = self.YELLOW
-            self.pixels[pixel] = eyes
-            
-class Sad(Smiley):
-    def __init__(self):
-        super().__init__()
+        eye_pixels = [10, 13, 18, 21]
+        for pixel in eye_pixels:
+            colour = self.BLANK if wide_open else self.YELLOW
+            self.pixels[pixel] = colour
+
+    def draw_sad_face(self):
+        """
+        Combines mouth and eyes into a full sad face
+        """
+        self.draw_mouth()
+        self.draw_eyes()
+        self.sense_hat.set_pixels(self.pixels)
 
     def blink(self, delay=0.25):
-        self.sense.clear()     # eyes disappear
-        time.sleep(delay)      # short pause
-        self.draw_sad_face()   # redraw sad face
+        """
+        Blink by clearing the display, pausing, then redrawing the sad face
+        """
+        self.sense_hat.clear()   # eyes disappear
+        time.sleep(delay)        # short pause
+        self.draw_sad_face()     # redraw sad face
