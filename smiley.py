@@ -21,7 +21,9 @@ class Smiley:
         self.sense_hat.set_pixels(self.pixels)
 
     def clear(self):
-        self.sense_hat.clear()
+        self.pixels = [self.BLACK] * 64
+        self.show()
+
 
     def complexion(self):
         return self.my_complexion
