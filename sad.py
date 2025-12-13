@@ -27,3 +27,4 @@ class Sad(Smiley):
         self.clear()
         time.sleep(delay)
         self.draw_sad_face()
+
