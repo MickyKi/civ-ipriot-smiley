@@ -31,12 +31,13 @@ class Sad(Smiley):
         """
         self.draw_mouth()
         self.draw_eyes()
+        self.show()   # push pixels to display
 
     def blink(self, delay=0.25):
         """
         Blink by clearing the display, pausing, then redrawing the sad face
         """
-        self.sense_hat.clear()   # eyes disappear
-        time.sleep(delay)        # short pause
-        self.draw_sad_face()     # redraw sad face
-        self.show()              # push pixels to display
+        self.sense_hat.clear()
+        time.sleep(delay)
+        self.draw_sad_face()
+
