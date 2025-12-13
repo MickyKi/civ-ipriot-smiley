@@ -6,11 +6,14 @@ class Angry(Smiley):
         self.draw_angry_face()
 
     def draw_mouth(self):
-        mouth = [41, 42, 43, 44, 45, 46]
-        for pixel in mouth:
+        # Straight/downturned mouth
+        mouth = [42, 43, 44, 45]
+        corners = [41, 46]
+        for pixel in mouth + corners:
             self.pixels[pixel] = self.BLANK
 
     def draw_eyes(self):
+        # Red eyes
         eye_pixels = [10, 13, 18, 21]
         for pixel in eye_pixels:
             self.pixels[pixel] = self.RED
