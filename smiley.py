@@ -14,16 +14,14 @@ class Smiley:
         # Instance variables
         self.sense_hat = SenseHat()
         self.my_complexion = complexion
-        self.pixels = [self.my_complexion] * 64  # single source of truth for display buffer
+        self.pixels = [self.my_complexion] * 64
         self.show()
 
     def show(self):
-        # Push current pixel buffer to display
         self.sense_hat.set_pixels(self.pixels)
 
     def clear(self):
         self.sense_hat.clear()
 
     def complexion(self):
-        # Return the complexion colour for this smiley
         return self.my_complexion
