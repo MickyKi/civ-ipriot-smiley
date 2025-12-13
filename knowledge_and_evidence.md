@@ -265,11 +265,13 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 Include a screenshot of the sad smiley or the modified `main.py`:
 
-![Sad Smiley Blinking](screenshots/sad_blinking.png)
+![Sad Smiley Blinking](screenshots/sad_blinking.png) (screenshots/sad.py.png)
+
+
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > Your answer here
+  > The Sad Smiley initially was having issues and the entire image was blacking out/blinking it was successfully adjusted so that only its eyes blinked, the timing of blinks was too fast @ 0.25s delay, so this was changed to 1.0s to allow it to be observed as intended. 
 
   ### 2.8. If It Walks Like a Duck…
 
@@ -277,23 +279,24 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   1. **Class Type Analysis:** What kind of class is `Blinkable`? Inspect its superclass for clues about its classification.
 
-     > Your answer here
+     > The `Blinkable` class acts as a mixin‑style helper/behavioural class (e.g, supporting polymorphism) designed to add blinking behaviour to smiley faces. It does not represent a full smiley itself but instead extends functionality by providing a reusable/inherited `blink()` method.
+     > The superclass `object`, it belongs to is a standard Python class rather than a subclass of `Smiley`. This indicates that `Blinkable` was desired to be combined with other classes (like `Happy` or `Sad`). Thus granting blinking capability without duplicate code. 
 
   2. **Class Implementation:** `Blinkable` is a class intended to be implemented by other classes. What generic term describes this kind of class, which is designed for implementation by others? **Clue**: Notice the lack of any concrete implementation and the naming convention.
 
-  > Your answer here
+  > `Blinkable` acts as an abstract class (also can be called a mixin). It is designed to provide a contract/shared behaviour that other classes can inherit, rather than being instantiated independently. The lack of concrete implementation and the naming convention signals it donates  to classes like `Happy` or `Sad` (i.e., they inherit), which then supply the specific details of blinking parameters. Thus `Blinkable`  is reused and a modular supportive building block.
 
   3. **OO Principle Identification:** Regarding your answer to question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
-  > Your answer here
+  > This represents Abstraction. `Blinkable` defines a general behaviour without explicit/full detail, enabling other classes to supply the paramaters.
 
   4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
-  > Your answer here
+  > The Sad Smiley acquires blinking behaviour by customising its own `blink()` method inside `sad.py`, similar to how the Happy Smiley handles eye related specifics (toggling). Even without `Blinkable`, users can directly code parameters i.e., the eye‑pixel changes and time-logic, reusing the same approach e.g., Sad face design.
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
-  > Your answer here
+  > This capability is known as Duck Typing. In Python, objects are judged by their ability to support required methods or behaviours, not by their declared type. Dynamically typed languages allow such flexible task execution, while static languages are less feasible (e.g., C#) as they require explicit type definitions.
 
   ***
 
