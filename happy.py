@@ -30,10 +30,10 @@ class Happy(Smiley):
         """
         Combines mouth and eyes into a full happy face
         """
-        self.pixels = [self.YELLOW] * 64   # reset drawing
+        self.pixels = [self.YELLOW] * 64   # reset background
         self.draw_mouth()
         self.draw_eyes()
-        self.show()   # push pixels to display
+        self.show()
 
     def blink(self, delay=0.25):
         """
