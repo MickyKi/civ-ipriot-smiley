@@ -14,17 +14,17 @@ def main():
     # Show Happy Smiley
     happy_face = Happy()
     time.sleep(1)
-    happy_face.blink()
+    happy_face.blink(delay=1)   # blink with 1 second delay
 
     # Show Sad Smiley
     sad_face = Sad()
     time.sleep(1)
-    sad_face.blink()
+    sad_face.blink(delay=1)     # blink with 1 second delay
 
     # Show Angry Smiley
     angry_face = Angry()
     time.sleep(1)
-    # Angry shows face only in this demo
+    # Angry shows face only in this demo (no blink)
 
 if __name__ == '__main__':
     ############################################################
