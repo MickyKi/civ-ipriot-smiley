@@ -28,13 +28,10 @@ class Sad(Smiley):
         """
         Combines mouth and eyes into a full sad face
         """
-        # start from a fresh smiley background was glitching
-        self.pixels = [self.YELLOW] * 64   # reset all pixels to yellow
+        self.pixels = [self.YELLOW] * 64   # reset background
         self.draw_mouth()
         self.draw_eyes()
         self.show()
-
-
 
     def blink(self, delay=0.25):
         """
