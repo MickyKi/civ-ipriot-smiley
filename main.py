@@ -24,7 +24,7 @@ def main():
     # Show Angry Smiley
     angry_face = Angry()
     time.sleep(1)
-    # Angry doesn’t blink by default, just shows face
+    # Angry shows face only in this demo
 
 if __name__ == '__main__':
     ############################################################
