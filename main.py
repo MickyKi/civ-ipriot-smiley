@@ -7,7 +7,8 @@ That is, delete the sense_hat.py file that is included in this bundle.
 
 import time
 from happy import Happy
-from sad import Sad   
+from sad import Sad
+from angry import Angry
 
 def main():
     # Show Happy Smiley
@@ -19,6 +20,11 @@ def main():
     sad_face = Sad()
     time.sleep(1)
     sad_face.blink()
+
+    # Show Angry Smiley
+    angry_face = Angry()
+    time.sleep(1)
+    # Angry doesn’t blink by default, just shows face
 
 if __name__ == '__main__':
     ############################################################
