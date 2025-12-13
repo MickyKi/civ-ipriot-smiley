@@ -7,7 +7,7 @@ class Happy(Smiley):
     """
     def __init__(self):
         super().__init__()
-        self.draw_happy_face()   #show the happy face 
+        self.draw_happy_face()   # show the happy face immediately
 
     def draw_mouth(self):
         """
@@ -20,7 +20,6 @@ class Happy(Smiley):
     def draw_eyes(self, wide_open=True):
         """
         Draws the eyes (open or closed) on the happy smiley.
-        :param wide_open: eyes open or closed
         """
         eye_pixels = [10, 13, 18, 21]
         for pixel in eye_pixels:
@@ -31,9 +30,10 @@ class Happy(Smiley):
         """
         Combines mouth and eyes into a full happy face
         """
+        self.pixels = [self.YELLOW] * 64   # reset drawing
         self.draw_mouth()
         self.draw_eyes()
-        self.show()   #pixels to display
+        self.show()   # push pixels to display
 
     def blink(self, delay=0.25):
         """
@@ -44,6 +44,3 @@ class Happy(Smiley):
         time.sleep(delay)
         self.draw_eyes(wide_open=True)
         self.show()
-
-
-
