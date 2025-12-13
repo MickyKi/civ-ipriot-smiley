@@ -7,16 +7,18 @@ class Sad(Smiley):
         self.draw_sad_face()
 
     def draw_mouth(self):
-    # Downturned mouth shape
-    mouth = [42, 43, 44, 45]      #i changed these lines to let the sad face have a frown instead of straight line. 
-    corners = [41, 46]            #i changed these lines to let the sad face have a frown instead of straight line.
-    for pixel in mouth + corners:
-        self.pixels[pixel] = self.BLANK
+        """
+        Draws a downturned mouth for the sad face.
+        """
+        mouth = [42, 43, 44, 45]   # #i changed these lines to let the sad face have a frown instead of straight line. 
+        corners = [41, 46]         # #i changed these lines to let the sad face have a frown instead of straight line. 
+        for pixel in mouth + corners:
+            self.pixels[pixel] = self.BLANK
 
     def draw_eyes(self, wide_open=True):
         eye_pixels = [10, 13, 18, 21]
         for pixel in eye_pixels:
-            colour = self.BLANK if wide_open else self.YELLOW
+            colour = self.BLANK if wide_open else self.BLUE
             self.pixels[pixel] = colour
 
     def draw_sad_face(self):
@@ -29,4 +31,3 @@ class Sad(Smiley):
         self.clear()
         time.sleep(delay)
         self.draw_sad_face()
-
