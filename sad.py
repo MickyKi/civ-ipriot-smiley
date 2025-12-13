@@ -11,7 +11,7 @@ class Sad(Smiley):
         Draws a downturned mouth for the sad face.
         """
         mouth = [42, 43, 44, 45]   #neutral line 
-        corners = [49, 53]         # #i changed these lines to let the sad face have a frown instead of straight line. 
+        corners = [50, 53]         # #i changed these lines to let the sad face have a frown instead of straight line. 
         for pixel in mouth + corners:
             self.pixels[pixel] = self.BLANK
 
