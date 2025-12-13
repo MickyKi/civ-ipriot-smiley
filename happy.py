@@ -21,15 +21,13 @@ class Happy(Smiley, Blinkable):
         for pixel in mouth:
             self.pixels[pixel] = self.BLANK
             
-    def draw_eyes(self, wide_open=True):
+    def draw_happy_face(self):
         """
-        Draws the eyes (open or closed) on the happy smiley.
-        :param wide_open: eyes open or closed
+        Combines mouth and eyes into a full happy face
         """
-        eye_pixels = [10, 13, 18, 21]
-        for pixel in eye_pixels:
-            colour = self.BLANK if wide_open else self.YELLOW
-            self.pixels[pixel] = colour
+        self.draw_mouth()
+        self.draw_eyes()
+        self.show()   # push pixels to display
 
     def blink(self, delay=0.25):
         """
@@ -40,4 +38,5 @@ class Happy(Smiley, Blinkable):
         time.sleep(delay)
         self.draw_eyes(wide_open=True)
         self.show()
+
 
