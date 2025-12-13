@@ -4,14 +4,13 @@ from smiley import Smiley
 class Sad(Smiley):
     def __init__(self):
         super().__init__()
-        self.draw_mouth()
-        self.draw_eyes()
+        self.draw_sad_face()   # show the sad face
 
     def draw_mouth(self):
         """
         Draws the mouth feature on a sad smiley
         """
-        mouth = [49, 54, 42, 43, 44, 45]
+        mouth = [41, 42, 43, 44, 45, 46]
         for pixel in mouth:
             self.pixels[pixel] = self.BLANK
 
@@ -31,7 +30,7 @@ class Sad(Smiley):
         """
         self.draw_mouth()
         self.draw_eyes()
-        self.show()   # push pixels to display
+        self.show()   # pixels to display
 
     def blink(self, delay=0.25):
         """
@@ -40,4 +39,3 @@ class Sad(Smiley):
         self.sense_hat.clear()
         time.sleep(delay)
         self.draw_sad_face()
-
