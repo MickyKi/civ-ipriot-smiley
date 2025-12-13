@@ -10,17 +10,18 @@ from happy import Happy
 from sad import Sad   
 
 def main():
-    # Test Happy Smiley
+    # Tests the Happy Smiley
     happy_face = Happy()
-    happy_face.show()
+    happy_face.draw_happy_face()   
     time.sleep(1)
     happy_face.blink()
 
-    # Test Sad Smiley
+    # Tests the Sad Smiley
     sad_face = Sad()
-    sad_face.show()
+    sad_face.draw_sad_face()       
     time.sleep(1)
     sad_face.blink()
+
 
 if __name__ == '__main__':
     ############################################################
