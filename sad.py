@@ -31,7 +31,6 @@ class Sad(Smiley):
         """
         self.draw_mouth()
         self.draw_eyes()
-        self.sense_hat.set_pixels(self.pixels)
 
     def blink(self, delay=0.25):
         """
@@ -40,3 +39,4 @@ class Sad(Smiley):
         self.sense_hat.clear()   # eyes disappear
         time.sleep(delay)        # short pause
         self.draw_sad_face()     # redraw sad face
+        self.show()              # push pixels to display
