@@ -1,7 +1,7 @@
 import time
 from smiley import Smiley
 
-class Sad(Smiley):
+class SadSmiley(Smiley):
     def __init__(self):
         super().__init__(complexion=self.BLUE)
         self.draw_sad_face()
@@ -27,8 +27,8 @@ class Sad(Smiley):
         self.draw_eyes()
         self.show()
 
-    def blink(self, delay=1):
-        # Close eyes (fill them with blue to match complexion)
+    def blink(self, delay=0.25):
+        # Close eyes (fill them with blue to match complexion) #delay defaulted back to 0.25 in line with the guide. 
         self.draw_eyes(wide_open=False)
         self.show()
         time.sleep(delay)
