@@ -6,23 +6,23 @@ That is, delete the sense_hat.py file that is included in this bundle.
 """
 
 import time
-from happy import Happy
-from sad import Sad
-from angry import Angry
+from happy import HappySmiley
+from sad import SadSmiley
+from angry import AngrySmiley
 
 def main():
     # Show Happy Smiley
-    happy_face = Happy()
+    happy_face = HappySmiley()
     time.sleep(1)
     happy_face.blink(delay=1)   # blink with 1 second delay
 
     # Show Sad Smiley
-    sad_face = Sad()
+    sad_face = SadSmiley()
     time.sleep(1)
     sad_face.blink(delay=1)     # blink with 1 second delay
 
     # Show Angry Smiley
-    angry_face = Angry()
+    angry_face = AngrySmiley()
     time.sleep(1)
     # Angry shows face only in this demo (no blink)
 
