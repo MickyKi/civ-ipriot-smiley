@@ -25,6 +25,6 @@ class Smiley:
         self.pixels = [self.BLACK] * 64
         self.show()
 
+    # New method for Step 1 complexion sector
     def complexion(self):
-        return self.my_complexion
-
+        return self.YELLOW
