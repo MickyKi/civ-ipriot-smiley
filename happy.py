@@ -2,7 +2,7 @@ import time
 from smiley import Smiley
 from blinkable import Blinkable
 
-class Happy(Smiley, Blinkable):
+class HappySmiley(Smiley, Blinkable):
     def __init__(self):
         super().__init__(complexion=self.YELLOW)
         self.draw_happy_face()
