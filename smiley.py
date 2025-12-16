@@ -17,18 +17,16 @@ class Smiley:
         self.sense_hat = SenseHat()
         self.my_complexion = complexion
 
-        # 8x8 grid using Y shorthand (to be refactored laterwith IDE tool)
-        Y = Smiley.YELLOW
-        C = self.my_complexion
+        # 8x8 grid AFTER refactor: complexion, complexion, ...
         self.pixels = [
-            complexion, complexion, complexion, complexion,
-            complexion, complexion, complexion, complexion,
-            complexion, complexion, complexion, complexion,
-            complexion, complexion, complexion, complexion,
-            complexion, complexion, complexion, complexion,
-            complexion, complexion, complexion, complexion,
-            complexion, complexion, complexion, complexion,
-            complexion, complexion, complexion, complexion,
+            complexion, complexion, complexion, complexion, complexion, complexion, complexion, complexion,
+            complexion, complexion, complexion, complexion, complexion, complexion, complexion, complexion,
+            complexion, complexion, complexion, complexion, complexion, complexion, complexion, complexion,
+            complexion, complexion, complexion, complexion, complexion, complexion, complexion, complexion,
+            complexion, complexion, complexion, complexion, complexion, complexion, complexion, complexion,
+            complexion, complexion, complexion, complexion, complexion, complexion, complexion, complexion,
+            complexion, complexion, complexion, complexion, complexion, complexion, complexion, complexion,
+            complexion, complexion, complexion, complexion, complexion, complexion, complexion, complexion,
         ]
 
         self.show()
@@ -40,7 +38,6 @@ class Smiley:
         self.pixels = [self.BLACK] * 64
         self.show()
 
-    # complexion method (currently returns instance variable)
     def complexion(self):
         return self.my_complexion
 
@@ -59,11 +56,13 @@ class AngrySmiley(Smiley):
     def __init__(self):
         super().__init__(complexion=Smiley.RED)
 
-Smiley()         # default yellow
-time.sleep(1)
-HappySmiley()    # yellow
-time.sleep(1)
-SadSmiley()      # blue
-time.sleep(1)
-AngrySmiley()    # red
-time.sleep(1)
+
+if __name__ == "__main__":
+    Smiley()         # default yellow
+    time.sleep(1)
+    HappySmiley()    # yellow
+    time.sleep(1)
+    SadSmiley()      # blue
+    time.sleep(1)
+    AngrySmiley()    # red
+    time.sleep(1)
