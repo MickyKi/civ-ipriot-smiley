@@ -1,4 +1,5 @@
 from sense_hat import SenseHat
+import time
 
 class Smiley:
     # Class variables (shared constants)
@@ -16,17 +17,18 @@ class Smiley:
         self.sense_hat = SenseHat()
         self.my_complexion = complexion
 
-        # 8x8 grid using Y shorthand (to be refactored using IDE tool)
+        # 8x8 grid using Y shorthand (to be refactored laterwith IDE tool)
         Y = Smiley.YELLOW
+        C = self.my_complexion
         self.pixels = [
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
+            complexion, complexion, complexion, complexion,
+            complexion, complexion, complexion, complexion,
+            complexion, complexion, complexion, complexion,
+            complexion, complexion, complexion, complexion,
+            complexion, complexion, complexion, complexion,
+            complexion, complexion, complexion, complexion,
+            complexion, complexion, complexion, complexion,
+            complexion, complexion, complexion, complexion,
         ]
 
         self.show()
@@ -56,3 +58,12 @@ class SadSmiley(Smiley):
 class AngrySmiley(Smiley):
     def __init__(self):
         super().__init__(complexion=Smiley.RED)
+
+Smiley()         # default yellow
+time.sleep(1)
+HappySmiley()    # yellow
+time.sleep(1)
+SadSmiley()      # blue
+time.sleep(1)
+AngrySmiley()    # red
+time.sleep(1)
