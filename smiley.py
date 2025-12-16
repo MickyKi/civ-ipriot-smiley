@@ -25,6 +25,21 @@ class Smiley:
         self.pixels = [self.BLACK] * 64
         self.show()
 
-    # New method for Step 1 complexion sector
+    # Refactored complexion method
     def complexion(self):
-        return self.YELLOW
+        return self.my_complexion
+
+
+class HappySmiley(Smiley):
+    def __init__(self):
+        super().__init__(complexion=Smiley.YELLOW)
+
+
+class SadSmiley(Smiley):
+    def __init__(self):
+        super().__init__(complexion=Smiley.BLUE)
+
+
+class AngrySmiley(Smiley):
+    def __init__(self):
+        super().__init__(complexion=Smiley.RED)
