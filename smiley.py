@@ -2,13 +2,14 @@ from sense_hat import SenseHat
 
 class Smiley:
     # Class variables (shared constants)
-    BLACK  = (0, 0, 0)
-    BLANK  = BLACK
-    YELLOW = (255, 255, 0)
-    WHITE  = (255, 255, 255)
-    RED    = (255, 0, 0)
-    GREEN  = (0, 255, 0)
-    BLUE   = (0, 0, 255)
+    BLACK   = (0, 0, 0)
+    BLANK   = BLACK
+    YELLOW  = (255, 255, 0)
+    WHITE   = (255, 255, 255)
+    RED     = (255, 0, 0)
+    GREEN   = (0, 255, 0)
+    BLUE    = (0, 0, 255)
+    ORANGE  = (255, 165, 0)
 
     def __init__(self, complexion=YELLOW):
         # Instance variables
@@ -24,6 +25,6 @@ class Smiley:
         self.pixels = [self.BLACK] * 64
         self.show()
 
-
     def complexion(self):
         return self.my_complexion
+
