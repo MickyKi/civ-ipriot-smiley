@@ -1,7 +1,7 @@
 from smiley import Smiley
 
-class Angry(Smiley):
-    # I used an orange background made to help distinguish, while sharing same smiley base smiley setup. 
+class AngrySmiley(Smiley):
+    # I used an orange background made to help distinguish, while sharing same smiley base smiley setup, red eyes would not have shown on red background... 
     ORANGE = (255, 165, 0)
 
     def __init__(self):
