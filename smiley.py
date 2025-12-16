@@ -15,7 +15,20 @@ class Smiley:
         # Instance variables
         self.sense_hat = SenseHat()
         self.my_complexion = complexion
-        self.pixels = [self.my_complexion] * 64
+
+        # 8x8 grid using Y shorthand (to be refactored using IDE tool)
+        Y = Smiley.YELLOW
+        self.pixels = [
+            Y, Y, Y, Y, Y, Y, Y, Y,
+            Y, Y, Y, Y, Y, Y, Y, Y,
+            Y, Y, Y, Y, Y, Y, Y, Y,
+            Y, Y, Y, Y, Y, Y, Y, Y,
+            Y, Y, Y, Y, Y, Y, Y, Y,
+            Y, Y, Y, Y, Y, Y, Y, Y,
+            Y, Y, Y, Y, Y, Y, Y, Y,
+            Y, Y, Y, Y, Y, Y, Y, Y,
+        ]
+
         self.show()
 
     def show(self):
@@ -25,7 +38,7 @@ class Smiley:
         self.pixels = [self.BLACK] * 64
         self.show()
 
-    # Refactored complexion method
+    # complexion method (currently returns instance variable)
     def complexion(self):
         return self.my_complexion
 
