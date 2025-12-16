@@ -309,19 +309,23 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > Your answer here
+        > The colors can be defined as constants within the Smiley class (e.g., `YELLOW`, `GREEN`, `RED`, `ORANGE`). They also appear in related classes involved in                   rendering and face attributes.
+
+             
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
-        > Your answer here
+        > These colors are generally stored as constant and static variables (e.g., Red Green Blue (RGB) tuples and hex codes). The expectation is that they do not change             during execution as they are representive of fixed palette values opposed to a dynamic state.
+        
      3. Add the color blue to the appropriate class using the appropriate format and values.
+
 
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > Your answer here
+        > The color variables are used within the Smiley class.
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > Your answer here
+     > The easiest way to change the smileys to green is modifying; default complexions in the constructor e.g., in the: __init__ method (i.e., Smiley class), replace complexion=YELLOW with complexion=GREEN.
 
 
 
